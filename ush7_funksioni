@@ -16,6 +16,7 @@ void sort3(int& a, int& b, int& c){
     sort2(a,c);
     //Pas ekzekutimit te dy rreshtave te mesiperm jemi te sigurte se te variabli a ndodhet numri me i vogel. Ngelet te therrasim sort2 per b dhe c.
     sort2(b,c);
+    return; 
 }
 
 
