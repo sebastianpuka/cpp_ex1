@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+/* Ne kete funksion variablat kalojne ne reference me ane te &, dmth
+ funksioni mund ti modifikoje vlerat e variablave*/
+void sort2(int& a, int& b){
+    if(a>b){
+        int temp=a;
+        a=b;
+        b=temp;
+    }
+    return;
+}
+
+void sort3(int& a, int& b, int& c){
+    sort2(a,b);
+    sort2(a,c);
+    //Pas ekzekutimit te dy rreshtave te mesiperm jemi te sigurte se te variabli a ndodhet numri me i vogel. Ngelet te therrasim sort2 per b dhe c.
+    sort2(b,c);
+}
+
+
+int main(int argc, const char * argv[]) {
+    int nr1=11;
+    int nr2=10;
+    cout<<"Testo sort2"<<endl;
+    sort2(nr1, nr2);
+    cout<<nr1<<endl;
+    cout<<nr2<<endl;
+    cout<<"Testo sort3"<<endl;
+    int nr3=9;
+    sort3(nr1, nr2, nr3);
+    cout<<nr1<<" "<<nr2<<" "<<nr3<<endl;
+    return 0;
+}
